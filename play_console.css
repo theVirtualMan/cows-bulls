@@ -1,0 +1,64 @@
+body {
+  font-family: "Raleway", sans-serif
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color:rgb(255,255,255);
+}
+
+#container {
+  background-image: url("pictures/ice&fire.jpg");
+  height: 100%;
+  background-position: center ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#user {
+  position: absolute;
+  top: 5%;
+  left:2%;
+  height: 90%;
+  width: 46%;
+  padding: 10px;
+  background-color: rgba(150, 150, 150, 0.2);
+}
+
+#pc {
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  height: 90%;
+  width: 46%;
+  padding: 10px;
+  background-color: rgba(150, 150, 150, 0.2);
+}
+
+#pinBox {
+  position: absolute;
+  left: 30%;
+}
+
+.num {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 25px;
+  color: rgb(200, 200, 200);
+  background-color: rgba(180, 180, 180, 0.2);
+  border-color: rgba(150, 150, 150, 0.1);
+}
+
+.dynamic {
+  width: 350px;
+  height: 30px;
+  text-align: center;
+  font-size: 15px;
+  color: rgb(250, 250, 250);
+  background-color: rgba(100, 100, 100, 0.2);
+  border-color: rgba(150, 150, 150, 0.3);
+}

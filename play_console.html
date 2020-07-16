@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cows and Bulls</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="play_console.css" />
+  <script src="play_console.js"></script>
+
+</head>
+
+
+<body>
+  <div id='container'>
+
+    <div id='user'>
+      <div id='pinBox'>
+        <input type="text" id="n0" class='num' pattern="[0-9]" maxlength="1" />
+        <input type="text" id="n1" class='num' pattern="[0-9]" maxlength="1" />
+        <input type="text" id="n2" class='num' pattern="[0-9]" maxlength="1" />
+        <input type="text" id="n3" class='num' pattern="[0-9]" maxlength="1" />
+
+        <button onclick="play_game_left_pane()">Submit</button>
+      </div>
+    </div>
+
+    <div id='pc'>
+        <input type="text" pattern="[0-9]" maxlength="4" />
+    </div>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+body {
+  font-family: "Raleway", sans-serif
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color:rgb(255,255,255);
+}
+
+.container {
+  background-image: url("pictures/blacksky.jpg");
+  height: 100%;
+  background-position: center ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.pinBox {
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  /* padding: 10px;;
+  border: 10px;
+  background-color: rgba(100, 100, 100, 0.7); */
+}
+
+input {
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(200, 200, 200);
+  background-color: rgba(80, 80, 80, 0.7);
+  border-color: rgba(150, 150, 150, 1);
+}
+
+.submit {
+  position:relative;
+  left: 35%;
+  padding: 15px;
+  border: 15px;
+}
+
+button {
+  background-color: rgb(200, 200, 200);
+  color: black;
+}
