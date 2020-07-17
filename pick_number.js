@@ -7,6 +7,14 @@ function store_number(){
 
   sessionStorage.setItem("pc_num", lst[len]);
 
+
+  prob_nums = [];
+  for (let i of lst) {
+    prob_nums.push(i);
+  }
+
+  sessionStorage.setItem("prob_nums", JSON.stringify(prob_nums));
+
   let n0 = Number(document.getElementById("n0").value);
   let n1 = Number(document.getElementById("n1").value);
   let n2 = Number(document.getElementById("n2").value);

@@ -43,6 +43,11 @@ body, html {
   left: 30%;
 }
 
+#pcBox {
+  position: absolute;
+  left: 30%;
+}
+
 .num {
   width: 50px;
   height: 50px;
