@@ -60,34 +60,47 @@ function play_game_left_pane() {
 
   let num = n0*1000 + n1*100 + n2*10 + n3;
 
-  let turn_count = Number(sessionStorage.getItem("turn_count"));
-  sessionStorage.setItem("turn_count", turn_count+1);
+  let lst = JSON.parse(sessionStorage.getItem("lst"));
 
-  let div1 = document.getElementById("user");
+  for (let i of lst) {
+    if (num == i) {
+      let turn_count = Number(sessionStorage.getItem("turn_count"));
+      sessionStorage.setItem("turn_count", turn_count+1);
 
-  let tmp = getCowsAndBulls(pc_num, num);
+      let div1 = document.getElementById("user");
 
-  let cows = tmp[0];
-  let bulls = tmp[1];
+      let tmp = getCowsAndBulls(pc_num, num);
 
-  add_line(cows, bulls, num, div1);
+      let cows = tmp[0];
+      let bulls = tmp[1];
+
+      add_line(cows, bulls, num, div1);
+
+      document.getElementById("n0").value = '';
+      document.getElementById("n1").value = '';
+      document.getElementById("n2").value = '';
+      document.getElementById("n3").value = '';
+
+      if (bulls == 4) {
+        let turn_count = sessionStorage.getItem("turn_count");
+        alert(`Correct! YOU WON!!
+            you guessed the Number in ${turn_count} chances`);
+
+        sessionStorage.clear();
+        window.location.href = "home.html";
+      }
+
+      play_game_right_pane()
+      return;
+    }
+  }
+
+  alert("choose valid number");
 
   document.getElementById("n0").value = '';
   document.getElementById("n1").value = '';
   document.getElementById("n2").value = '';
   document.getElementById("n3").value = '';
-
-  if (bulls == 4) {
-    let turn_count = sessionStorage.getItem("turn_count");
-    alert(`Correct! YOU WON!!
-        you guessed the Number in ${turn_count} chances`);
-
-    sessionStorage.clear();
-    window.location.href = "home.html";
-  }
-
-  play_game_right_pane()
-
 }
 
 // ------------------- right pane -------------------------------------------------

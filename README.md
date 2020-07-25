@@ -1,10 +1,12 @@
 # cows&bulls
 
+[![Version](https://img.shields.io/badge/Version-v1.1.0-blue)]()
+
 This is simple cows and bulls game using html, css and javascript.
 
 The code was written for 4 digit number.
 
-No repeatition of numbers is allowed. The number zero is not allowed
+No repetition of numbers is allowed. The number zero is not allowed
 
 - Cows => number match but position different
 - Bulls => both number and position match

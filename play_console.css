@@ -25,7 +25,7 @@ body, html {
   height: 90%;
   width: 46%;
   padding: 10px;
-  background-color: rgba(150, 150, 150, 0.2);
+  background-color: rgba(250, 250, 250, 0.2);
 }
 
 #pc {
@@ -35,7 +35,7 @@ body, html {
   height: 90%;
   width: 46%;
   padding: 10px;
-  background-color: rgba(150, 150, 150, 0.2);
+  background-color: rgba(250, 250, 250, 0.2);
 }
 
 #pinBox {

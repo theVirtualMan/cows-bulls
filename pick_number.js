@@ -20,11 +20,20 @@ function store_number(){
   let n2 = Number(document.getElementById("n2").value);
   let n3 = Number(document.getElementById("n3").value);
 
+
   let usr_num = n0*1000 + n1*100 + n2*10 + n3;
 
-  sessionStorage.setItem("usr_num", usr_num);
-  sessionStorage.setItem("turn_count", 0);
+  for (let i of lst) {
+    if (usr_num == i) {
+      sessionStorage.setItem("usr_num", usr_num);
+      sessionStorage.setItem("turn_count", 0);
 
-  window.location.href = "play_console.html";
+      window.location.href = "play_console.html";
+      return;
+    }
+  }
+
+  alert("choose valid number");
+  window.location.href = "pick_number.html";
 
 }
