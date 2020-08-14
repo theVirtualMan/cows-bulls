@@ -49,9 +49,28 @@ function getCowsAndBulls(orig, guess) {
 
 }
 
+function update_pc_list(num, pc_num, pc_lst){
+  let cb = getCowsAndBulls(pc_num, num);
+
+  let new_pc_lst = []
+
+  for (let i of pc_lst){
+      let tmp = getCowsAndBulls(i, num);
+
+      if ((tmp[0] == cb[0]) && (tmp[1] == cb[1])){
+        new_pc_lst.push(i);
+      }
+  }
+
+  sessionStorage.setItem("pc_lst", JSON.stringify(new_pc_lst));
+}
+
 function play_game_left_pane() {
 
-  let pc_num = sessionStorage.getItem("pc_num");
+  let pc_lst = JSON.parse(sessionStorage.getItem("pc_lst"));
+  let len = (Math.floor(Math.random()*10000))%pc_lst.length;
+  let pc_num = pc_lst[len];
+
 
   let n0 = Number(document.getElementById("n0").value);
   let n1 = Number(document.getElementById("n1").value);
@@ -64,6 +83,7 @@ function play_game_left_pane() {
 
   for (let i of lst) {
     if (num == i) {
+
       let turn_count = Number(sessionStorage.getItem("turn_count"));
       sessionStorage.setItem("turn_count", turn_count+1);
 
@@ -81,6 +101,9 @@ function play_game_left_pane() {
       document.getElementById("n2").value = '';
       document.getElementById("n3").value = '';
 
+      document.getElementById("n0").focus();
+      document.getElementById("n0").select();
+
       if (bulls == 4) {
         let turn_count = sessionStorage.getItem("turn_count");
         alert(`Correct! YOU WON!!
@@ -91,6 +114,8 @@ function play_game_left_pane() {
       }
 
       play_game_right_pane()
+      update_pc_list(num, pc_num, pc_lst);
+
       return;
     }
   }
@@ -101,6 +126,10 @@ function play_game_left_pane() {
   document.getElementById("n1").value = '';
   document.getElementById("n2").value = '';
   document.getElementById("n3").value = '';
+
+  pin1.focus();
+  pin1.select();
+
 }
 
 // ------------------- right pane -------------------------------------------------
@@ -125,7 +154,9 @@ function play_game_right_pane() {
 
   let usr_num = sessionStorage.getItem("usr_num");
   prob_nums = JSON.parse(sessionStorage.getItem("prob_nums"));
-  let num = prob_nums[0];
+  let len = (Math.floor(Math.random()*10000))%prob_nums.length;
+
+  let num = prob_nums[len];
 
 
   document.getElementById("p0").value = num[0];
@@ -159,3 +190,79 @@ function play_game_right_pane() {
   }
 
 }
+
+// ------------------- event listeners -------------------------------------------------
+
+let pin1 = document.getElementById("n0");
+let pin2 = document.getElementById("n1");
+let pin3 = document.getElementById("n2");
+let pin4 = document.getElementById("n3");
+
+pin1.focus();
+pin1.select();
+
+pin1.addEventListener('keyup', (event) => {
+    if (Number(event.key)<10 && Number(event.key)>0){
+      pin2.focus();
+      pin2.select();
+    }
+    if (event.keyCode == '39') { //right arrow
+      pin2.focus();
+      pin2.select();
+    }
+});
+
+pin2.addEventListener('keyup', (event) => {
+  if (Number(event.key)<10 && Number(event.key)>0){
+    pin3.focus();
+    pin3.select();
+  }
+  if (event.key == 'Backspace') {
+    pin1.focus();
+    pin1.select();
+  }
+  if (event.keyCode == '37') { //left arrow
+    pin1.focus();
+    pin1.select();
+  }
+  if (event.keyCode == '39') { //right arrow
+    pin3.focus();
+    pin3.select();
+  }
+});
+
+pin3.addEventListener('keyup', (event) => {
+  if (Number(event.key)<10 && Number(event.key)>0){
+    pin4.focus();
+    pin4.select();
+  }
+  if (event.key == 'Backspace') {
+    pin2.focus();
+    pin2.select();
+  }
+  if (event.keyCode == '37') { //left arrow
+    pin2.focus();
+    pin2.select();
+  }
+  if (event.keyCode == '39') { //right arrow
+    pin4.focus();
+    pin4.select();
+  }
+});
+
+pin4.addEventListener('keyup', (event) => {
+    if (Number(event.key)<10 && Number(event.key)>0){
+      play_game_left_pane();
+    }
+    if (event.key == 'Backspace') {
+      pin3.focus();
+      pin3.select();
+    }
+    if (event.key == 'Enter') {
+      play_game_left_pane();
+    }
+    if (event.keyCode == '37') { //left arrow
+      pin3.focus();
+      pin3.select();
+    }
+});

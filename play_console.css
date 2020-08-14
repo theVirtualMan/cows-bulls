@@ -25,7 +25,7 @@ body, html {
   height: 90%;
   width: 46%;
   padding: 10px;
-  background-color: rgba(250, 250, 250, 0.2);
+  background-color: rgba(250, 250, 250, 0);
 }
 
 #pc {
@@ -35,7 +35,7 @@ body, html {
   height: 90%;
   width: 46%;
   padding: 10px;
-  background-color: rgba(250, 250, 250, 0.2);
+  background-color: rgba(250, 250, 250, 0);
 }
 
 #pinBox {
@@ -54,7 +54,7 @@ body, html {
   text-align: center;
   font-size: 25px;
   color: rgb(200, 200, 200);
-  background-color: rgba(180, 180, 180, 0.2);
+  background-color: rgba(50, 100, 30, 0.8);
   border-color: rgba(150, 150, 150, 0.1);
 }
 
@@ -64,6 +64,6 @@ body, html {
   text-align: center;
   font-size: 15px;
   color: rgb(250, 250, 250);
-  background-color: rgba(100, 100, 100, 0.2);
+  background-color: rgba(50, 100, 30, 0.8);
   border-color: rgba(150, 150, 150, 0.3);
 }

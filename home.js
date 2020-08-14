@@ -44,5 +44,5 @@ function create_number() {
 
     window.location.href = "pick_number.html";
 
-    
+
 }

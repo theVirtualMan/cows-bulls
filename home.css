@@ -9,6 +9,13 @@ body, html {
   color:rgb(255,255,255);
 }
 
+#title {
+  position: absolute;
+  top:10%;
+  left:45%;
+  font-size:30px;
+  /* color: rgb(255,69,0); */
+}
 
 #bgimg {
   background-image: url("pictures/rainforest.jpg");
@@ -36,6 +43,7 @@ a {
 } */
 
 button {
+    /* background-color: rgb(200, 200, 200); */
     height:50px;
     width:100px;
     margin: -20px -50px;
