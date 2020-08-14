@@ -1,6 +1,6 @@
 # cows&bulls
 
-[![Version](https://img.shields.io/badge/Version-v1.1.0-blue)]()
+[![Version](https://img.shields.io/badge/Version-v1.2.0-blue)]()
 
 This is simple cows and bulls game using html, css and javascript.
 
