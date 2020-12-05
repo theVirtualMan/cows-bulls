@@ -6,11 +6,9 @@ body, html {
   height: 100%;
   margin: 0;
   padding: 0;
-  color:rgb(255,255,255);
 }
 
 #container {
-  background-image: url("pictures/ice&fire.jpg");
   height: 100%;
   background-position: center ;
   background-repeat: no-repeat;
@@ -18,34 +16,60 @@ body, html {
   background-attachment: fixed;
 }
 
-#user {
+#title {
   position: absolute;
   top: 5%;
-  left:2%;
-  height: 90%;
-  width: 46%;
+  left: 44%;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#user {
+  position: absolute;
+  top: 13%;
+  left:10%;
+  height: 80%;
+  width: 38%;
   padding: 10px;
-  background-color: rgba(250, 250, 250, 0);
+  background-color: rgb(230, 230, 230);
 }
 
 #pc {
   position: absolute;
-  top: 5%;
-  right: 2%;
-  height: 90%;
-  width: 46%;
+  top: 13%;
+  right: 10%;
+  height: 80%;
+  width: 38%;
   padding: 10px;
-  background-color: rgba(250, 250, 250, 0);
+  background-color: rgb(230, 230, 230);
+}
+
+#pc_txt {
+  margin-top: 5%;
+  margin-left: 10%;
+  font-size: 20px;
+  color: rgb(100,100,100);
+  font-weight: bold;
+}
+
+#your_txt {
+  margin-top: 5%;
+  margin-left: 10%;
+  font-size: 20px;
+  color: rgb(100,100,100);
+  font-weight: bold;
 }
 
 #pinBox {
   position: absolute;
   left: 30%;
+  top: 10%;
 }
 
 #pcBox {
   position: absolute;
   left: 30%;
+  top: 10%;
 }
 
 .num {
@@ -53,17 +77,14 @@ body, html {
   height: 50px;
   text-align: center;
   font-size: 25px;
-  color: rgb(200, 200, 200);
-  background-color: rgba(50, 100, 30, 0.8);
-  border-color: rgba(150, 150, 150, 0.1);
+  background-color: rgb(250, 250, 250);
+  border-color: rgb(235, 235, 235);
 }
 
 .dynamic {
   width: 350px;
   height: 30px;
   text-align: center;
-  font-size: 15px;
-  color: rgb(250, 250, 250);
-  background-color: rgba(50, 100, 30, 0.8);
-  border-color: rgba(150, 150, 150, 0.3);
+  font-size: 25px;
+  background-color: rgb(250, 250, 250);
 }

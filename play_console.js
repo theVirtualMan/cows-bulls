@@ -7,8 +7,9 @@ function add_line(cows, bulls, guess, div1) {
 
   div2.style.cssText = `position: relative;
                         top: 75px;
-                        color: rgb(250, 250, 250);
-                        left: 22%`;
+                        color: rgb(0, 0, 0);
+                        left: 22%;
+                        font: 25px;`;
 
   div1.append(div2);
 
@@ -106,6 +107,26 @@ function play_game_left_pane() {
 
       if (bulls == 4) {
         let turn_count = sessionStorage.getItem("turn_count");
+
+        let num_matches = Number(localStorage.getItem("num_matches"));
+        let num_won = Number(localStorage.getItem("num_won"));
+        let avg_chances = Number(localStorage.getItem("avg_chances"));
+
+        if(isNaN(num_matches)){
+          num_matches = 0;
+        }
+        if(isNaN(num_won)){
+          num_won = 0;
+        }
+        if(isNaN(avg_chances)){
+          avg_chances = 0;
+        }
+        let new_avg = ((avg_chances*num_won+Number(turn_count))/(num_won+1)).toFixed(2);
+
+        localStorage.setItem("num_matches", num_matches+1);
+        localStorage.setItem("num_won", num_won+1);
+        localStorage.setItem("avg_chances", new_avg);
+
         alert(`Correct! YOU WON!!
             you guessed the Number in ${turn_count} chances`);
 
@@ -182,6 +203,24 @@ function play_game_right_pane() {
 
   if (bulls == 4) {
     let turn_count = sessionStorage.getItem("turn_count");
+
+    let num_matches = Number(localStorage.getItem("num_matches"));
+    // let avg_chances = Number(localStorage.getItem("avg_chances"));
+
+    if(isNaN(num_matches)){
+      num_matches = 0;
+    }
+    // if(isNaN(avg_chances)){
+    //   avg_chances = 0;
+    // }
+    // let new_avg = 0;
+    // if (num_matches != 0) {
+    //   new_avg = ((avg_chances*num_matches+turn_count)/(num_won)).toFixed(2);
+    // }
+
+    localStorage.setItem("num_matches", num_matches+1);
+    // localStorage.setItem("avg_chances", new_avg);
+
     alert(`Sorry! PC WON!!
         It guessed the Number in ${turn_count} chances`);
 
