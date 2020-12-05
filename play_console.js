@@ -131,7 +131,7 @@ function play_game_left_pane() {
             you guessed the Number in ${turn_count} chances`);
 
         sessionStorage.clear();
-        window.location.href = "home.html";
+        window.location.href = "index.html";
       }
 
       play_game_right_pane()
@@ -225,7 +225,7 @@ function play_game_right_pane() {
         It guessed the Number in ${turn_count} chances`);
 
     sessionStorage.clear();
-    window.location.href = "home.html";
+    window.location.href = "index.html";
   }
 
 }
